@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import MiIp from './Pages/MiIp';
 import DoxxeoInfo from './Pages/DoxxeoInfo';
-import RickRoll from './Pages/RickHome'
+import RickRoll from './Pages/ProductoComponente'
 
 const routes = [
   {
