@@ -1,14 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import ProductoComponente from '../views/VistaProducto';
-//import ProductoComponente from '../views/VistaProducto';
-//import ProductoComponente from '../views/VistaProducto'
+import VistaProducto from '../views/VistaProducto';
 
 const routes = [
   {
-    name: 'ProductoComponente',
+    name: 'VistaProducto',
     path: '/',
-    component: ProductoComponente,
+    component: VistaProducto,
     props: true,
   },
   
