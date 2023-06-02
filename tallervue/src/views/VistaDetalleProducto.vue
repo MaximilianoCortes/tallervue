@@ -1,10 +1,8 @@
 <template>
   <div>
-    <DetalleProductoComponente :producto="producto"></DetalleProductoComponente>
+    <DetalleProductoComponente :reviews="reviews"></DetalleProductoComponente>
   </div>
 </template>
-
-
 
 <script>
 import axios from 'axios';
@@ -16,25 +14,23 @@ export default {
   },
   data() {
     return {
-      producto: null
+      reviews: null
     };
   },
-    mounted() {
-      //const id = this.$route.params.id;
-      this.Detalles(/*id*/);
-    },
-    methods: {
-      Detalles(/*id*/) {
-        console.log("hola")
-        axios
-          .get(`http://ec2-54-163-208-73.compute-1.amazonaws.com:8080/products/647178286edc199bff73e81c/reviews`)
-          .then(response => {
-            this.producto = response.data}
-          )
-          .catch(error => {
-            console.error(error);
-          });
-      }
+  mounted() {
+    this.fetchReviews();
+  },
+  methods: {
+    fetchReviews() {
+      axios
+        .get(`http://ec2-54-163-208-73.compute-1.amazonaws.com:8080/products/647178286edc199bff73e81c/reviews`)
+        .then(response => {
+          this.reviews = response.data;
+        })
+        .catch(error => {
+          console.error(error);
+        });
     }
+  }
 }
 </script>

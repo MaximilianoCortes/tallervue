@@ -1,26 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import DetalleProductoComponente from '../views/VistaDetalleProducto';
+import VistaDetalleProducto from '../views/VistaDetalleProducto';
 //import ProductoComponente from '../views/VistaProducto';
 //import ProductoComponente from '../views/VistaProducto'
 
 const routes = [
-  {
-    name: 'MiIp',
-    path: '/ip',
-    component: DetalleProductoComponente,
-    props: true,
-  },
-  {
-    name: 'DoxxeoInfo',
-    path: '/DoxxeoInfo/:ip',
-    component: DetalleProductoComponente,
-    props:true
-  },
+
   {
     name: 'Home',
     path: '/',
-    component: DetalleProductoComponente,
+    component: VistaDetalleProducto,
     props:true
   },
   

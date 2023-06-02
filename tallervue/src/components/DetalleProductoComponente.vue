@@ -1,14 +1,13 @@
 <template>
   
-  <div v-if="producto">
-    <h2>{{ producto.product.name }}</h2>
-    <p>Precio: {{ producto.product.price }}</p>
+  <div v-if="reviews">
+    <h2>{{reviews.product.createdAt}}</h2>
 
     <div id="carousel" class="carousel slide">
       <div class="carousel-inner">
     <div
     class="carousel-item"
-    v-for="(image, index) in producto.product.images"
+    v-for="(image, index) in reviews.product.images"
     :key="index"
     :class="{ 'active': index === 0 }"
   >
@@ -24,10 +23,16 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-    
-    <h3>Listado de reseñas o comentarios ({{ producto.reviews.length }})</h3>
+<h2>{{reviews.product.description}}</h2>
+<h2>{{reviews.product.price}}</h2>
+<h2>{{reviews.product.user_id }}</h2>
+<h2>{{reviews.product.user.name }}</h2>
+<img :src=reviews.product.user.photo alt="x">
+<h2>{{reviews.product.user.city }}</h2>
+
+    <h3>Listado de reseñas o comentarios ({{ reviews.reviews.length }})</h3>
     <ul>
-      <li v-for="review in producto.reviews" :key="review._id">
+      <li v-for="review in reviews.reviews" :key="review._id">
         <img :src="review.user.photo" alt="Imagen del usuario">
         <p>Usuario: {{ review.user.name }}</p>
         <p>Comentario: {{ review.review }}</p>
@@ -40,6 +45,10 @@
 export default {
   props: {
     producto: {
+      type: Object,
+      required: true
+    }
+    ,reviews:{
       type: Object,
       required: true
     }
