@@ -1,32 +1,27 @@
 <template>
-    <div class="center-container">
-        <h1>TU IP ES : <router-link :to="`/DoxxeoInfo/${ip}`">{{ ip }}</router-link></h1>
-        <div>Haz click en tu ip para mas informacion</div>
+    <div v-if="producto" class="card">
+  <img :src="producto.images[0]" alt="Producto" style="width:15%">
+  <div class="container">
+    <h4><b>{{producto.name}}</b></h4>
+    <p> {{producto.description}}</p>
+    <p><b>{{producto.createdAt}}</b></p>
+    <p><b> ${{producto.price}}</b></p>
+    <!-- <button><router-link :to="/VistaDetalleProducto/`${producto._id}`">Ver detalles</router-link></button> -->
   </div>
+</div>
+<div v-else>
+  <p>No se encontró el producto</p>
+</div>
   </template>
   
   <script>
-  import axios from 'axios'
   export default {
-    data() {
-      return {
-        ip: ''
-      };
+    name: "ProductoComponente",
+  props: {
+    producto: {
+      type: Object,
+      default: null,
     },
-    created() {
-      this.obtenerIP();
-    },
-    methods: {
-      obtenerIP() {
-        axios
-          .get('https://api.ipify.org/?format=json')
-          .then(response => {
-            this.ip = response.data.ip;
-          })
-          .catch(error => {
-            console.error(error);
-          });
-      }
-    }
+  },
   };
   </script>
