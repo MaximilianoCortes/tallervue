@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import ProductoComponente from '../views/VistaProducto';
+import DetalleProductoComponente from '../views/VistaDetalleProducto';
 //import ProductoComponente from '../views/VistaProducto';
 //import ProductoComponente from '../views/VistaProducto'
 
@@ -8,19 +8,19 @@ const routes = [
   {
     name: 'MiIp',
     path: '/ip',
-    component: ProductoComponente,
+    component: DetalleProductoComponente,
     props: true,
   },
   {
     name: 'DoxxeoInfo',
     path: '/DoxxeoInfo/:ip',
-    component: ProductoComponente,
+    component: DetalleProductoComponente,
     props:true
   },
   {
     name: 'Home',
     path: '/',
-    component: ProductoComponente,
+    component: DetalleProductoComponente,
     props:true
   },
   

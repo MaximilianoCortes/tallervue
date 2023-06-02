@@ -1,32 +1,51 @@
 <template>
-    <div class="center-container">
-        <h1>TU IP ES : <router-link :to="`/DoxxeoInfo/${ip}`">{{ ip }}</router-link></h1>
-        <div>Haz click en tu ip para mas informacion</div>
-  </div>
-  </template>
   
-  <script>
-  import axios from 'axios'
-  export default {
-    data() {
-      return {
-        ip: ''
-      };
-    },
-    created() {
-      this.obtenerIP();
-    },
-    methods: {
-      obtenerIP() {
-        axios
-          .get('https://api.ipify.org/?format=json')
-          .then(response => {
-            this.ip = response.data.ip;
-          })
-          .catch(error => {
-            console.error(error);
-          });
-      }
+  <div v-if="producto">
+    <h2>{{ producto.product.name }}</h2>
+    <p>Precio: {{ producto.product.price }}</p>
+
+    <div id="carousel" class="carousel slide">
+      <div class="carousel-inner">
+    <div
+    class="carousel-item"
+    v-for="(image, index) in producto.product.images"
+    :key="index"
+    :class="{ 'active': index === 0 }"
+  >
+    <img :src="image" class="d-block w-100" alt="...">
+  </div>
+</div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    
+    <h3>Listado de reseñas o comentarios ({{ producto.reviews.length }})</h3>
+    <ul>
+      <li v-for="review in producto.reviews" :key="review._id">
+        <img :src="review.user.photo" alt="Imagen del usuario">
+        <p>Usuario: {{ review.user.name }}</p>
+        <p>Comentario: {{ review.review }}</p>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    producto: {
+      type: Object,
+      required: true
     }
-  };
-  </script>
+  }
+};
+</script>
+<style>
+
+</style>
