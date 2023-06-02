@@ -1,15 +1,15 @@
 <template>
     <div>
-      <MostrarIp/>
+      <ProductoComponente/>
     </div>
   </template>
   
   <script>
-  import MostrarIp from '../components/MostrarIp.vue';
+  import ProductoComponente from '../views/VistaProducto';
   
   export default {
     components: {
-      MostrarIp
+      ProductoComponente
     }
   };
   </script>

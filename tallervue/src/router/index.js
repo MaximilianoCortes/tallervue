@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import ProductoComponente from '../views/VistaProducto';
-import ProductoComponente from '../views/VistaProducto';
-import ProductoComponente from '../views/VistaProducto'
+//import ProductoComponente from '../views/VistaProducto';
+//import ProductoComponente from '../views/VistaProducto'
 
 const routes = [
   {
