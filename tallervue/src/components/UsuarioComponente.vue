@@ -1,32 +1,39 @@
 <template>
-    <div class="center-container">
-        <h1>TU IP ES : <router-link :to="`/DoxxeoInfo/${ip}`">{{ ip }}</router-link></h1>
-        <div>Haz click en tu ip para mas informacion</div>
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" :src="photo" alt="loading....">
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+
+    <p class="card-text">{{ name }}</p>
+    <p class="card-text">{{ city }}</p>
+    <p class="card-text">{{ bio }}</p>
+    <p>Reseñas realizadas:</p>
+    <p class="card-text">{{ resenas.length }}</p>
+    <div v-for="resena in resenas" :key="resena">
+    
+    <img :src="resena.product.images?.[0]" alt="">
+    <p class="card-text">{{`Nombre Producto: ${resena.product.name}` }}</p>
+    <p class="card-text">{{`Reseña: ${resena.review}`}}</p>
+  
+  
   </div>
+
+  </div>
+</div>
+
   </template>
   
   <script>
-  import axios from 'axios'
   export default {
-    data() {
-      return {
-        ip: ''
-      };
-    },
-    created() {
-      this.obtenerIP();
-    },
-    methods: {
-      obtenerIP() {
-        axios
-          .get('https://api.ipify.org/?format=json')
-          .then(response => {
-            this.ip = response.data.ip;
-          })
-          .catch(error => {
-            console.error(error);
-          });
-      }
+    name: "UsuarioComponente",
+    props:{
+      name: String,
+      city: String,
+      bio: String,
+      photo: String,
+      resenas: Array,
     }
-  };
+  }
+
   </script>
