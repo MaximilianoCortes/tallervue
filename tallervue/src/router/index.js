@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import VistaProducto from '../views/VistaProducto';
+// import DetalleProductoComponente from '../views/VistaDetalleProducto'
 
 const routes = [
   {
@@ -9,6 +10,12 @@ const routes = [
     component: VistaProducto,
     props: true,
   },
+  // {
+  //   name: 'VistaDetalleProducto',
+  //   path: '/VistaDetalleProducto/',
+  //   component: DetalleProductoComponente,
+  //   props:true
+  // },
   
 ];
 

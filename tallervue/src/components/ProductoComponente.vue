@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div v-if="producto" class="card">
+  <div class="column"><div v-if="producto" class="card">
   <img :src="producto.images[0]" alt="Producto" style="width:15%">
   <div class="container">
     <h2><b>{{producto.name}}</b></h2>
@@ -12,8 +12,7 @@
 </div>
 <div v-else>
   <p>No se encontró el producto</p>
-</div>
-  <div class="column"></div>
+</div></div>
 </div>
     
   </template>
