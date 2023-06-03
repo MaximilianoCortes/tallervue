@@ -2,4 +2,4 @@
 Integrantes:
 Maximiliano Cortés,
 Cristóbal Matus,
-Carlo Negroni,
+Carlo Negroni.
