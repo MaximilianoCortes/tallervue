@@ -1,9 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-
 import VistaDetalleProducto from '../views/VistaDetalleProducto';
-
-import VistaProducto from '../views/VistaProducto'
+import VistaProducto from '../views/VistaProducto';
+import VistaUsuario from '../views/VistaUsuario.vue';
 
 const routes = [
 
@@ -20,10 +19,10 @@ const routes = [
     props:true
   },
   {
-    // name: 'VistaUsuario',
-    // path: '/VistaUsuario/:id',
-    // component: VistaUsuario,
-    // props:true
+    name: 'VistaUsuario',
+    path: '/VistaUsuario/:id',
+    component: VistaUsuario,
+    props:true
   },
   
 ];

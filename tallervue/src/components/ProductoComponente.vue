@@ -1,6 +1,6 @@
 <template>
 
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center" >
   <div v-if="producto" class="card" style="width: 18rem;">
   <img class="card-img-top" :src="producto.images[0]" alt="Producto">
   <div class="card-body">

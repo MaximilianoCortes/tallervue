@@ -1,10 +1,10 @@
 <template>
     <div>
-      <h1>SHOPI</h1>
+      <h1 class="Shoppi">SHOPI</h1>
       <ProductoComponente 
       v-for="producto in productos"
         :key="producto._id"
-        :producto="producto"/>
+        :producto="producto" class="publicaciones"/>
     </div>
   </template>
   
@@ -38,3 +38,9 @@ this.listaProductos()
   },
   };
   </script>
+
+  <style>
+  .Shoppi{
+    text-align: center;
+  }
+</style>
