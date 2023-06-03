@@ -1,30 +1,28 @@
 <template>
-
-<div class="card" style="width: 18rem;">
+<div  class="d-flex justify-content-center" > 
+  <div class="card text-center " style="width: 25rem;">
   <img class="card-img-top" :src="photo" alt="loading....">
   <div class="card-body">
     <h5 class="card-title"></h5>
 
-    <p class="card-text">{{ name }}</p>
-    <p class="card-text">{{ city }}</p>
-    <p class="card-text">{{ bio }}</p>
-    <p>Reseñas realizadas:</p>
-    <p class="card-text">{{ resenas.length }}</p>
-    <div v-for="resena in resenas" :key="resena">
+    <p class="card-text">{{`Nombre: ${name}`}}</p>
+    <p class="card-text">{{ `Ciudad: ${city}` }}</p>
+    <p class="card-text">{{ `Biografía: ${bio}` }}</p>
+
     
-    <img :src="resena.product.images?.[0]" alt="">
-    <p class="card-text">{{`Nombre Producto: ${resena.product.name}` }}</p>
-    <p class="card-text">{{`Reseña: ${resena.review}`}}</p>
-  
-  
-  </div>
+    <ComponenteReview :reviews="resena"></ComponenteReview>
+
 
   </div>
 </div>
+</div>
+
 
   </template>
   
   <script>
+import ComponenteReview from '../components/ComponenteReview.vue';
+
   export default {
     name: "UsuarioComponente",
     props:{
@@ -32,8 +30,11 @@
       city: String,
       bio: String,
       photo: String,
-      resenas: Array,
-    }
+      resena:Array
+    },
+    components:{
+    ComponenteReview,
+}
   }
 
   </script>
