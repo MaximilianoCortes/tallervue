@@ -8,7 +8,7 @@
     <p class="card-text">{{producto.description}}</p>
     <p class="card-text">Fecha publicación: {{producto.createdAt}}</p>
     <p class="card-text">Precio: ${{producto.price}}</p>
-    <!-- <a href="#" class="btn btn-primary"><router-link :to="/VistaDetalleProducto/`${producto._id}`">Ver detalles</router-link></a> -->
+    <button class="btn btn-primary" @click="() => cargarUsuario(producto._id)">Ver detalles</button>
   </div>
 </div>
 <div v-else>
@@ -29,6 +29,16 @@
       type: Object,
       default: null,
     },
+  },
+  methods: {
+    cargarUsuario(id) {
+      this.$router.push({
+        name: "VistaDetalleProducto",
+        params: {
+          id: id,
+        },
+      });
+    }
   },
   };
   </script>
