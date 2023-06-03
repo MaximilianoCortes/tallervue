@@ -8,7 +8,7 @@
     <p class="card-text">{{producto.description}}</p>
     <p class="card-text">Fecha publicación: {{producto.createdAt}}</p>
     <p class="card-text">Precio: ${{producto.price}}</p>
-    <button class="btn btn-primary" @click="() => cargarUsuario(producto._id)">Ver detalles</button>
+    <button class="btn btn-primary" @click="() => cargarProducto(producto._id)">Ver detalles</button>
   </div>
 </div>
 <div v-else>
@@ -31,7 +31,7 @@
     },
   },
   methods: {
-    cargarUsuario(id) {
+    cargarProducto(id) {
       this.$router.push({
         name: "VistaDetalleProducto",
         params: {
