@@ -18,10 +18,10 @@ export default {
     };
   },
   mounted() {
-    this.fetchReviews();
+    this.getReviews();
   },
   methods: {
-    fetchReviews() {
+    getReviews() {
       axios
         .get(`http://ec2-54-163-208-73.compute-1.amazonaws.com:8080/products/647178286edc199bff73e81c/reviews`)
         .then(response => {

@@ -1,15 +1,22 @@
 <template>
-    <div>
-      <ProductoComponente/>
-    </div>
-  </template>
-  
-  <script>
-  import ProductoComponente from '../views/VistaProducto';
-  
-  export default {
-    components: {
-      ProductoComponente
+  <div>
+    <div>{{ id }}</div>
+    <UsuarioComponente :id="id" />
+  </div>
+</template>
+
+<script>
+import UsuarioComponente from '../components/UsuarioComponente.vue';
+
+export default {
+  props: {
+    id: {
+      type: String,
+      required: true
     }
-  };
-  </script>
+  },
+  components: {
+    UsuarioComponente
+  }
+};
+</script>

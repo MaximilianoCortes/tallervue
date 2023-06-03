@@ -1,15 +1,27 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import VistaDetalleProducto from '../views/VistaDetalleProducto';
-//import ProductoComponente from '../views/VistaProducto';
-//import ProductoComponente from '../views/VistaProducto'
+import VistaUsuario from '../views/VistaUsuario';
+import VistaProducto from '../views/VistaProducto'
 
 const routes = [
 
   {
-    name: 'Home',
+    name: 'VistaDetalleProducto',
     path: '/',
     component: VistaDetalleProducto,
+    props:true
+  },
+  {
+    name: 'VistaUsuario',
+    path: '/VistaUsuario/:id',
+    component: VistaUsuario,
+    props:true
+  },
+  {
+    name: 'VistaProducto',
+    path: '/a',
+    component: VistaProducto,
     props:true
   },
   
