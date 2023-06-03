@@ -1,5 +1,5 @@
 # tallervue\
 Integrantes:
-Maximiliano Cortés
-Cristóbal Matus
-Carlo Negroni
+Maximiliano Cortés,
+Cristóbal Matus,
+Carlo Negroni,
