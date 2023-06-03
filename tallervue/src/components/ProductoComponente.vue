@@ -1,19 +1,23 @@
 <template>
-  <div class="row">
-  <div class="column"><div v-if="producto" class="card">
-  <img :src="producto.images[0]" alt="Producto" style="width:15%">
-  <div class="container">
-    <h2><b>{{producto.name}}</b></h2>
-    <p> {{producto.description}}</p>
-    <p><b>Fecha publicación: {{producto.createdAt}}</b></p>
-    <p><b>Precio: ${{producto.price}}</b></p>
-    <!-- <button><router-link :to="/VistaDetalleProducto/`${producto._id}`">Ver detalles</router-link></button> -->
+
+<div class="d-flex justify-content-center">
+  <div v-if="producto" class="card" style="width: 18rem;">
+  <img class="card-img-top" :src="producto.images[0]" alt="Producto">
+  <div class="card-body">
+    <h5 class="card-title">{{producto.name}}</h5>
+    <p class="card-text">{{producto.description}}</p>
+    <p class="card-text">Fecha publicación: {{producto.createdAt}}</p>
+    <p class="card-text">Precio: ${{producto.price}}</p>
+    <!-- <a href="#" class="btn btn-primary"><router-link :to="/VistaDetalleProducto/`${producto._id}`">Ver detalles</router-link></a> -->
   </div>
 </div>
 <div v-else>
   <p>No se encontró el producto</p>
-</div></div>
 </div>
+</div>
+
+
+
     
   </template>
   
@@ -28,33 +32,3 @@
   },
   };
   </script>
-
-<style>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.container {
-  padding: 2px 16px;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  border-radius: 5px;
-}
-
-img {
-  border-radius: 5px 5px 0 0;
-}
-.column {
-  align-self: center;
-  
-}
-
-</style>
